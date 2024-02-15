@@ -1,5 +1,6 @@
 package testBase;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +23,16 @@ public class BaseTest {
 		Response response = RestUtils.getToken(baseURI, formsData,res);
 		String token = Utility.getJsonPath(response, "access_token");
 		return token;
+	}
+	
+	public String getBaseURI() {
+		try {
+		return 	Utility.getGlobalValue("BaseURI");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

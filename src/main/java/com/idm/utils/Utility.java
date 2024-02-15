@@ -11,7 +11,7 @@ public class Utility {
 	public static String getGlobalValue(String key) throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(
-				System.getProperty("user.dir") + "/src/test//java/resources/global.properties");
+				System.getProperty("user.dir") + "/src/main/java/com/idm/config/config.properties");
 		prop.load(fis);
 		return prop.getProperty(key);
 
